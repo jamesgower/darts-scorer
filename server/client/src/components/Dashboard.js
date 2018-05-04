@@ -1,11 +1,20 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 class Dashboard extends React.Component {
 	render() {
 		return (
-			<div>TEST</div>
+			<div>
+				<h1>Hello {this.props.auth.name}</h1>
+			</div>
 		);
 	}
 }
 
-export default Dashboard;
+const mapStateToProps = ({ auth }) => {
+	return {
+		auth,
+	};
+};
+
+export default connect(mapStateToProps, actions)(Dashboard);

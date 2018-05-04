@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import './styles/App.css';
+import '../styles/App.css';
 
 class App extends Component {
-	componentDidMount() {
+	componentWillMount() {
 		this.props.fetchUser();
 	}
 	render() {
